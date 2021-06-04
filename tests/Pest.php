@@ -15,16 +15,15 @@ use App\Contracts\Rss;
 
 uses(Tests\TestCase::class)
     ->beforeEach(function () {
-
         $rss = Mockery::mock(Rss::class);
 
         $rss->shouldReceive('items')
             ->zeroOrMoreTimes()
             ->andReturn(collect([[
-                'link' => 'http://news-web.php.net/php.internals/114732',
-                'title' => 'Re: [RFC] Readonly properties',
+                'link'        => 'http://news-web.php.net/php.internals/114732',
+                'title'       => 'Re: [RFC] Readonly properties',
                 'description' => '<a href="mailto:matthewmatthew+at+gmail+dot+com" class="email fn n">Matthew&nbsp;Brown</a>',
-                'pubDate' => 'Fri, 04 Jun 2021 18:43:44 +0000',
+                'pubDate'     => 'Fri, 04 Jun 2021 18:43:44 +0000',
             ]]));
 
         $this->swap(Rss::class, $rss);

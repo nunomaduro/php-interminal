@@ -31,14 +31,14 @@ class UrlRss implements Rss
     {
         $items = [];
 
-        $value = fn($value) => trim($value->__toString());
+        $value = fn ($value) => trim($value->__toString());
 
         foreach (Feed::loadRss($this->url)->item as $item) {
             $items[] = [
-                'link' => $value($item->link),
-                'title' => $value($item->title),
+                'link'        => $value($item->link),
+                'title'       => $value($item->title),
                 'description' => $value($item->description),
-                'pubDate' => $value($item->pubDate),
+                'pubDate'     => $value($item->pubDate),
             ];
         }
 

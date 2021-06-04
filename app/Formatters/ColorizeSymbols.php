@@ -7,7 +7,8 @@ class ColorizeSymbols
     /**
      * Runs the formatter.
      *
-     * @param  array $mail
+     * @param array $mail
+     *
      * @return array
      */
     public function __invoke($mail)

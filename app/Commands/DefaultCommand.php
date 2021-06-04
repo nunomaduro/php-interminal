@@ -4,9 +4,7 @@ namespace App\Commands;
 
 use App\Formatters;
 use App\Repositories\MailRepository;
-use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
-use Illuminate\Support\Str;
 
 class DefaultCommand extends Command
 {
@@ -42,6 +40,7 @@ class DefaultCommand extends Command
      * Execute the console command.
      *
      * @param  \App\Repositories\MailRepository
+     *
      * @return void
      */
     public function handle(MailRepository $mails)
@@ -59,8 +58,8 @@ class DefaultCommand extends Command
         })->each(function ($mail) {
             $this->output->writeln([
                 "<fg=green>⇲</>  <fg=white;options=bold>{$mail['fromName']}</>"
-                . "<fg=#6C7280> > </>{$mail['subject']}"
-                . "<fg=#6C7280> > </>{$mail['createdAt']}",
+                ."<fg=#6C7280> > </>{$mail['subject']}"
+                ."<fg=#6C7280> > </>{$mail['createdAt']}",
                 $mail['extract'],
                 '',
             ]);
