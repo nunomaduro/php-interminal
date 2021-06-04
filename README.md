@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/nunomaduro/php-interminal/master/art/readme.png" width="400" alt="PHP Interminal">
 </p>
 
-**PHP Interminal** a command-line tool that gives you the PHP Internals discussions in your terminal. 
+**PHP Interminal** is a command-line tool that gives you access to PHP Internals discussions in your terminal. 
 
 ## 🚀 Quick start
 
