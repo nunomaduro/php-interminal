@@ -7,7 +7,8 @@ class ColorizeLinks
     /**
      * Runs the formatter.
      *
-     * @param  array $mail
+     * @param array $mail
+     *
      * @return array
      */
     public function __invoke($mail)
@@ -21,7 +22,6 @@ class ColorizeLinks
         $mail['extract'] = str_replace('https://www.', '', $mail['extract']);
 
         $mail['extract'] = str_replace('https://', '', $mail['extract']);
-
 
         return $mail;
     }

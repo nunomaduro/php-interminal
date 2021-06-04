@@ -7,13 +7,14 @@ class ColorizeMentions
     /**
      * Runs the formatter.
      *
-     * @param  array $mail
+     * @param array $mail
+     *
      * @return array
      */
     public function __invoke($mail)
     {
         $mail['extract'] = collect(explode("\r\n", $mail['extract']))->map(function ($line) {
-            if (str_ends_with($line, " wrote:")) {
+            if (str_ends_with($line, ' wrote:')) {
                 return "<fg=gray>▕</>  <fg=blue>$line</>";
             }
 

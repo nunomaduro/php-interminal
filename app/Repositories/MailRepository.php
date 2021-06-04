@@ -2,10 +2,8 @@
 
 namespace App\Repositories;
 
-use Algolia\AlgoliaSearch\SearchIndex;
 use App\Contracts\Rss;
 use DOMDocument;
-use Feed;
 use Illuminate\Support\Carbon;
 
 class MailRepository
@@ -20,7 +18,8 @@ class MailRepository
     /**
      * Creates a new repository instance.
      *
-     * @param  \App\Contracts\Rss $rss
+     * @param \App\Contracts\Rss $rss
+     *
      * @return void
      */
     public function __construct(Rss $rss)
@@ -47,9 +46,9 @@ class MailRepository
             $createdAt = Carbon::createFromFormat(\DateTimeInterface::RFC2822, $item['pubDate']);
 
             return $contents ? [
-                'extract' => $contents->nodeValue,
-                'subject' => $subject,
-                'fromName' => $fromName->nodeValue,
+                'extract'   => $contents->nodeValue,
+                'subject'   => $subject,
+                'fromName'  => $fromName->nodeValue,
                 'createdAt' => $createdAt->diffForHumans(),
             ] : null;
         })->filter()->values();

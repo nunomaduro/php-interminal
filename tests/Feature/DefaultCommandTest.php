@@ -2,7 +2,8 @@
 
 test('default', function () {
     $this->artisan('default')
-         ->expectsOutput(<<<EOF
+         ->expectsOutput(
+             <<<'EOF'
 ⇲  Matthew Brown >  [RFC] Readonly properties
 EOF
          )->assertExitCode(0);

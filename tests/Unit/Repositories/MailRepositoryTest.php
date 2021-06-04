@@ -10,7 +10,7 @@ test('latest', function () {
         ->toBeInstanceOf(Collection::class)
         ->sequence(
             fn ($mail) => $mail->toEqual([
-            'extract' => <<<EOF
+                'extract' => <<<EOF
 
 This is a great idea!\r
 \r
@@ -42,8 +42,9 @@ On Fri, 4 Jun 2021 at 11:19, Nikita Popov <nikita.ppv@gmail.com> wrote:\r
 > Regards,\r
 > Nikita\r
 >
-EOF . '   ',
-            'subject' => ' [RFC] Readonly properties',
-            'fromName' => 'Matthew Brown',
-        ]));
+EOF.'   ',
+                'subject'  => ' [RFC] Readonly properties',
+                'fromName' => 'Matthew Brown',
+            ])
+        );
 });
